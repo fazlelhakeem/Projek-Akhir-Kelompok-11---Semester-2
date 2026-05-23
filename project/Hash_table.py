@@ -20,21 +20,23 @@ class HashTable:
 
         bucket = self.table[index]
 
+        # Periksa apakah key sudah ada di dalam bucket
         for i in range(len(bucket)):
             if bucket[i][0] == key:
-                bucket[i] = (key,value)
+                bucket[i] = (key,value) #jika sudah ada perbarui data
                 return
-            
+        
+        # Jika key benar-benar baru, tambahkan ke dalam bucket
         bucket.append((key,value))
 
     #method untuk Mengambil nilai (value) berdasarkan key
     def get(self,key):
         index = self.hash_function(key)
         bucket = self.table[index]
-
+        #Looping untuk mencari key
         for k, v in bucket:
             if k == key:
-                return v
+                return v #jika key ditemukan maka mengembalikan value
             
         return None
     
@@ -42,16 +44,18 @@ class HashTable:
     def contain(self,key):
         return self.get(key) is not None
     
-    #method untuk manambahkan
+    #method untuk manambahkan frekuensi data yang sudah ada
     def increment(self, key):
         index = self.hash_function(key)
         bucket = self.table[index]
 
+        # Jika kata sudah ada, naikkan jumlahnya frekuensi katanya
         for i in range(len(bucket)):
             if bucket[i][0] == key:
                 bucket[i] = (key, bucket[i][1] + 1)
                 return
         
+        # Jika kata belum pernah muncul, daftarkan dengan nilai awal = 1
         bucket.append((key, 1))
 
     #method mengambil key dan value
@@ -67,6 +71,6 @@ class HashTable:
         result = []
         for bucket in self.table:
             for k, _ in bucket:
-                result.append(k)
+                result.append(k) #mengembalikan key ke result
         return result
     

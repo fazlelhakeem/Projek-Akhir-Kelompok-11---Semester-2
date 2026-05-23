@@ -19,21 +19,23 @@ class Double_Linked_list:
         while curr.next:
             curr = curr.next
 
+        #Menambah data baru ke paling akhir
         curr.next = new_node
-        new_node.prev = curr
+        new_node.prev = curr #menghubungkan kembali data baru ke data sebelumnya
     
     #Mencari apakah suatu data (target) ada di dalam list.
     def search(self, target):
         curr = self.head
 
         while curr:
+            #kondisi jika data ditemukan
             if curr.data == target:
-                return True
-            curr = curr.next
+                return True #mengembalikan nilai true jika data ditemukan
+            curr = curr.next #lanjut ke data selanjutnya
 
         return False
     
-    #Mengubah struktur Linked List menjadi List biasa bawaan Python ([]).
+    #Mengubah struktur Double Linked List menjadi List biasa bawaan Python ([]).
     def to_list(self):
         result = []
         curr = self.head
