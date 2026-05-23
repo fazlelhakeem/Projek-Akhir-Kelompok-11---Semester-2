@@ -2,7 +2,8 @@ class Node:
     def __init__(self,data):
         self.data = data
         self.next = None
-class Linked_list:
+        self.prev = None
+class Double_Linked_list:
     def __init__(self):
         self.head = None
 
@@ -19,6 +20,7 @@ class Linked_list:
             curr = curr.next
 
         curr.next = new_node
+        new_node.prev = curr
     
     #Mencari apakah suatu data (target) ada di dalam list.
     def search(self, target):
@@ -41,3 +43,5 @@ class Linked_list:
             curr = curr.next
 
         return result
+
+
