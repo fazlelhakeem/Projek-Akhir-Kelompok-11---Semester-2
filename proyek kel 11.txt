@@ -1,0 +1,76 @@
+kelompok 11:
+Fazl El Hakeem
+Mufid Waladi
+M. Raffi Pratama
+
+== Pendeteksi Kemiripan Teks pada Dokumen ==
+
+
+- Penjelasan Proyek -
+Proyek ini merupakan aplikasi yang dirancang untuk menganalisis tingkat kemiripan antara dua dokumen teks secara otomatis. Tujuan utama dari program ini adalah untuk membantu pengguna dalam mendeteksi kemungkinan plagiarisme atau kesamaan isi antar dokumen dengan menggunakan pendekatan berbasis algoritma dan struktur data.
+
+Program bekerja dengan cara membaca dua dokumen teks yang dimasukkan oleh pengguna, kemudian melakukan proses preprocessing seperti mengubah huruf menjadi lowercase, menghapus tanda baca, serta memecah teks menjadi kumpulan kata (tokenisasi). Setelah itu, sistem akan menghitung frekuensi kemunculan setiap kata menggunakan struktur data dictionary.
+
+Selanjutnya, program akan membandingkan kedua dokumen dengan memanfaatkan struktur data seperti set untuk menemukan kata-kata yang sama. Tingkat kemiripan dihitung berdasarkan jumlah kata yang sama dibandingkan dengan total kata yang ada, sehingga menghasilkan nilai persentase kemiripan antar dokumen.
+
+Selain itu, program juga menyediakan fitur tambahan seperti pengurutan kata berdasarkan frekuensi (sorting), pencarian kata tertentu (searching), serta penyimpanan hasil analisis ke dalam file. 
+
+| Materi               | Implementasi                                                      |
+| -------------------- | ----------------------------------------------------------------- |
+| Sorting              | Urutkan kata berdasarkan frekuensi kemunculan                     |
+| Searching            | Mencari kata yang sama dalam dua dokumen                          |
+| File Handler         | Membaca file teks (TXT) dan menyimpan hasil analisis          |
+| Rekursif             | Pencocokan kata/paragraf secara rekursif                          |
+| List                 | Menyimpan daftar kata dari dokumen                                |
+| Tuple                | Menyimpan hasil pasangan (kata, frekuensi) setelah proses sorting |
+| Set                  | Menyimpan kata unik untuk membandingkan kemiripan                 |
+| Dictionary           | Menyimpan frekuensi kata untuk perhitungan dan pencarian cepat    |
+| Stack                | Riwayat perbandingan dokumen (undo)                               |
+| Queue                | Antrian proses pengecekan dokumen                                 |
+| OOP                  | Class Dokumen, Analisis, dan Hasil                                |
+| Single Linked List   | Penyimpanan daftar kata                                           |
+| Double Linked List   | Navigasi hasil analisis                                           |
+| Circular Linked List | Perbandingan berulang antar dokumen                               |
+| Tree                 | Struktur parsing teks (kata → kalimat → paragraf)                 |
+| Graph                | Relasi kemiripan antar dokumen                                    |
+| Hash Table           | Penyimpanan kata untuk pencarian cepat                            |
+
+
+- Fitur Utama -
+
+1. Input Dokumen
+   + Input teks dari file txt
+
+2. Preprocessing Teks
+   + Mengubah huruf jadi lowercase
+   + Menghapus tanda baca
+   + Memisahkan teks jadi kata (tokenisasi)
+
+3. Perhitungan Frekuensi Kata
+   + Menghitung jumlah kemunculan tiap kata
+   + Menggunakan dictionary
+
+4. Deteksi Kata yang Sama
+   + Membandingkan dua dokumen
+   + Menampilkan kata yang muncul di keduanya
+
+5. Perhitungan Persentase Kemiripan
+   + Menghitung tingkat kemiripan (%)
+   + Misalnya berdasarkan jumlah kata yang sama
+
+6. Sorting Hasil
+   + Mengurutkan kata berdasarkan frekuensi tertinggi
+
+7. Searching Kata
+   + Mencari kata tertentu dalam dokumen
+
+8. Riwayat Analisis
+   + Menyimpan hasil perbandingan sebelumnya
+
+9. Penyimpanan ke File
+   + Simpan hasil analisis ke file TXT
+
+10. Tampilkan Detail Hasil
+    + Persentase kemiripan
+    + Daftar kata sama
+    + Total kata masing-masing dokumen
