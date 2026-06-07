@@ -2,12 +2,13 @@ class Node:
     def __init__(self,data):
         self.data = data
         self.next = None
+
 class Linked_list:
     def __init__(self):
         self.head = None
 
     #Menambahkan node baru di akhir rantai.
-    def append(self,data):
+    def tambah(self,data):
         new_node = Node(data)
 
         if self.head is None:
@@ -19,18 +20,7 @@ class Linked_list:
             curr = curr.next
 
         curr.next = new_node
-    
-    #Mencari apakah suatu data (target) ada di dalam list.
-    def search(self, target):
-        curr = self.head
 
-        while curr:
-            if curr.data == target:
-                return True
-            curr = curr.next
-
-        return False
-    
     #Mengubah struktur Linked List menjadi List biasa bawaan Python ([]).
     def to_list(self):
         result = []

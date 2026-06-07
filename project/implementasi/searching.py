@@ -1,0 +1,23 @@
+def linear_search(data, target):
+    for item in data:
+        if item == target:
+            return True
+    return False
+
+def binary_search(data, target):
+    left = 0
+    right = len(data) - 1
+
+    while left <= right:
+        mid = (left + right) // 2
+
+        if data[mid] == target:
+            return mid
+
+        if data[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+
+    return -1
+

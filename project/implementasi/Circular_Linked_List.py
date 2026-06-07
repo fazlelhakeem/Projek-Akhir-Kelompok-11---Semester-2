@@ -3,12 +3,13 @@ class Node:
         self.data = data
         self.next = None
         self.prev = None
+        
 class Circular_Linked_list:
     def __init__(self):
         self.head = None
 
     #Menambahkan node baru di akhir rantai.
-    def append(self,data):
+    def tambah(self,data):
         new_node = Node(data)
 
         if self.head is None:
@@ -58,4 +59,33 @@ class Circular_Linked_list:
 
         return result
 
+    def hapus(self, target):
+        curr = self.head
 
+        while curr:
+            if curr.data == target:
+                #Jika node yang dihapus adalah head
+                if curr == self.head:
+                    #Jika hanya ada satu node
+                    if curr.next == self.head:
+                        self.head = None
+                    else:
+                        tail = self.head.prev
+                        self.head = self.head.next
+                        tail.next = self.head
+                        self.head.prev = tail
+                else:
+                    prev_node = curr.prev
+                    next_node = curr.next
+                    prev_node.next = next_node
+                    next_node.prev = prev_node
+
+                return True
+
+            curr = curr.next
+
+            #jika data kembali ke awal
+            if curr == self.head:
+                break
+
+        return False

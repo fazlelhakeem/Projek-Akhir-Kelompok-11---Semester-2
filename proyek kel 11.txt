@@ -19,14 +19,13 @@ Selain itu, program juga menyediakan fitur tambahan seperti pengurutan kata berd
 | -------------------- | ----------------------------------------------------------------- |
 | Sorting              | Urutkan kata berdasarkan frekuensi kemunculan                     |
 | Searching            | Mencari kata yang sama dalam dua dokumen                          |
-| File Handler         | Membaca file teks (TXT) dan menyimpan hasil analisis          |
-| Rekursif             | Pencocokan kata/paragraf secara rekursif                          |
+| File Handler         | Membaca file teks (TXT) dan menyimpan hasil analisis              |
+| Rekursif             | Menghitung frekuensi kata pada teks                               |
 | List                 | Menyimpan daftar kata dari dokumen                                |
 | Tuple                | Menyimpan hasil pasangan (kata, frekuensi) setelah proses sorting |
 | Set                  | Menyimpan kata unik untuk membandingkan kemiripan                 |
 | Dictionary           | Menyimpan frekuensi kata untuk perhitungan dan pencarian cepat    |
 | Stack                | Riwayat perbandingan dokumen (undo)                               |
-| Queue                | Antrian proses pengecekan dokumen                                 |
 | OOP                  | Class Dokumen, Analisis, dan Hasil                                |
 | Single Linked List   | Penyimpanan daftar kata                                           |
 | Double Linked List   | Navigasi hasil analisis                                           |

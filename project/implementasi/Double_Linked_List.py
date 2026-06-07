@@ -3,12 +3,13 @@ class Node:
         self.data = data
         self.next = None
         self.prev = None
+
 class Double_Linked_list:
     def __init__(self):
         self.head = None
 
     #Menambahkan node baru di akhir rantai.
-    def append(self,data):
+    def tambah(self,data):
         new_node = Node(data)
 
         if self.head is None:
@@ -34,6 +35,27 @@ class Double_Linked_list:
             curr = curr.next #lanjut ke data selanjutnya
 
         return False
+
+    #Menghapus node sesuai target
+    def hapus(self, target):
+        curr = self.head
+
+        while curr:
+            #kondisi jika data ditemukan
+            if curr.data == target:
+                #jika node yang dihapus adalah head
+                if curr.prev is None:
+                    self.head = curr.next
+                    if self.head:
+                        self.head.prev = None
+                else:
+                    curr.prev.next = curr.next
+                    if curr.next:
+                        curr.next.prev = curr.prev
+                return True #mengembalikan nilai true jika data berhasil dihapus
+            curr = curr.next #lanjut ke data selanjutnya
+
+        return False #mengembalikan nilai false jika data tidak ditemukan
     
     #Mengubah struktur Double Linked List menjadi List biasa bawaan Python ([]).
     def to_list(self):
