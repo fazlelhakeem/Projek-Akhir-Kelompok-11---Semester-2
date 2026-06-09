@@ -1,13 +1,13 @@
-from Hash_table import HashTable
+from . import Hash_table as ht
 
 #menghitung banyak kemunculan suatu kata
 def hitung_frekuen(words):
-    ht = HashTable()
+    h_table = ht.HashTable()
 
     for kata in words:
-        ht.increment(kata)
+        h_table.increment(kata)
 
-    return ht
+    return h_table
 
 #menghitung total kata yang ada
 def total_kata(words):

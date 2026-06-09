@@ -1,3 +1,5 @@
+#File untuk mengimplementasikan struktur data Circular Linked List
+
 class Node:
     def __init__(self,data):
         self.data = data
@@ -8,34 +10,38 @@ class Circular_Linked_list:
     def __init__(self):
         self.head = None
 
-    #Menambahkan node baru di akhir rantai.
+    #Fungsi untuk menambahkan node baru di akhir
     def tambah(self,data):
         new_node = Node(data)
 
         if self.head is None:
             self.head = new_node
-            new_node.next = self.head #Menunjuk ke diri sendiri
-            new_node.prev = self.head #Menunjuk ke diri sendiri
+            new_node.next = self.head 
+            new_node.prev = self.head 
             return
         
-        #Menyambungkan pada bagian sebelum head ke paling akhir
+        #menyambungkan pada bagian sebelum head ke paling akhir
         tail = self.head.prev 
 
-        tail.next = new_node #Menambah data baru ke paling akhir
-        new_node.prev = tail #Menyambungkan sebelum data baru ke bagian akhir sebelumnya
+        tail.next = new_node #menambah data baru setelah tail
+        new_node.prev = tail #menyambungkan prev data baru ke tail
 
-        new_node.next = self.head #Menghubungkan setelah data baru ke head
-        self.head.prev = new_node #Menyambungkan pada bagian sebelum head ke data baru
+        new_node.next = self.head #menghubungkan next data baru ke head
+        self.head.prev = new_node #Menyambungkan pada prev head ke data baru
+        self.head = new_node #mengubah data baru menjadi head
     
-    #Mencari apakah suatu data ada di dalam list.
-    def search(self, target):
+    #Fungsi untuk mencari suatu data di dalam linked list berdasarkan nomor
+    def search(self, target, len_data):
         curr = self.head
 
+        if len_data == 0:
+            return False
+
         #Looping sepanajang data
-        while curr:
+        for i in range(len_data):
             #kondisi jika data ditemukan
-            if curr.data == target:
-                return True
+            if i+1 == target:
+                return curr.data
             curr = curr.next
 
             #jika data kembali ke awal

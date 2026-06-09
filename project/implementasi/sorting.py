@@ -11,15 +11,15 @@ def sort_by_frekuensi(items):
 
     return items
 
-#urut sesuai huruf
-def sort_by_huruf(items):
+#urut sesuai abjad
+def sort_by_kata(items):
     items = list(items)
 
     n = len(items)
     #menggunakan Algoritma Bubble sort
     for i in range(n):
         for j in range(0, n - i - 1):
-            if items[j][0] < items[j + 1][0]:#membandingkan kata / key
+            if items[j][0] > items[j + 1][0]:#membandingkan kata / key
                 items[j] , items[j + 1] = items[j + 1] ,items[j]
 
     return items

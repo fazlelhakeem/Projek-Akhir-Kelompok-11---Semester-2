@@ -1,7 +1,9 @@
+#File untuk fungsi preprocessing (sebelum menghitung similarity)
 import implementasi.Single_Linked_List as sll
 import implementasi.Double_Linked_List as dll
 import implementasi.Circular_Linked_List as cll
 
+#Fungs untuk mengubah semua huruf menjadi huruf kecil
 def to_lower(teks):
     current = teks
 
@@ -13,7 +15,7 @@ def to_lower(teks):
     else:
         to_lower(current.next)
 
-#fungsi untuk menghapus simbol-simbol yang tidak diperlukan
+#Fungsi untuk menghapus simbol-simbol yang tidak diperlukan
 def hapus_simbol(teks):
     simbol = ".,!?;:\"'()[]{}<>-/\\|@#$%^&*_+=~`"
 
@@ -21,7 +23,7 @@ def hapus_simbol(teks):
         while teks.search(i):
             teks.hapus(i)
 
-#Memisahkan antar kata
+#Fungsi untuk memisahkan antar kata
 def tokenize(teks):
     hasil = []
     temp = ""
@@ -38,13 +40,13 @@ def tokenize(teks):
         else:
             temp += char
 
-    # menambahkan isi temp ke hasil jika kalimat sudah habis dan tidak ada spasi
+    #menambahkan isi temp ke hasil jika kalimat sudah habis dan tidak ada spasi
     if temp != "":
         hasil.append(temp)
 
     return hasil
 
-#hapus stopwords
+#Fungsi untuk menghapus stopwords
 def hapus_stopwords(teks):
     stopwords = ["dan", "di", "ke", "yang", "dari"]
     hasil = []
@@ -61,6 +63,7 @@ def hapus_stopwords(teks):
 
     return hasil
 
+#Fungsi preprocess (digunakan sebelum menghitung similarity)
 def preprocess(teks):
     #mengubah teks menjadi single linked list
     teks_sll = sll.Linked_list()

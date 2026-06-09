@@ -1,81 +1,58 @@
 from implementasi.stack import Stack
 import implementasi.file_handler as fh
 import fitur.similarity as sim
-import fitur.menu as mn 
+import fitur.menu as mn
 import implementasi.OOP as dd
 import fitur.data as dt
 
-def main():
-   log_menu = Stack()
 
+def main():
    while True:
       print()
-      print('='*32)
-      print('   PENDETEKSI SIMILARITY TEKS')
-      print('='*32)
-
+      print('=' * 32)
+      print('   PENGHITUNG SIMILARITY TEKS')
+      print('=' * 32)
       print('1. Cek Similarity')
-      print('2. Create File')
-      print('3. Delete File')
-      print('4. Lihat Daftar File')
+      print('2. Lihat Riwayat Similarity')
+      print('3. Create File')
+      print('4. Delete File')
+      print('5. Lihat Daftar File')
       print('0. Exit')
 
-      pilih = int(input('\nPilih menu: '))
+      try:
+         pilih = int(input('\nPilih menu: '))
+      except ValueError:
+         print('Masukkan angka yang valid!')
+         continue
 
       match pilih:
          case 1:
-            log_menu.tambah(main)
-
-            while True:
-               hasil = mn.cek_similarity()
-
-               if hasil == 0:
-                  back = log_menu.hapus
-                  back()
-                  return
-
-               print('='*32)
-               print('1. Lihat frekunsi kata')
+            dt.log_menu.tambah(main)
+            mn.cek_similarity()
 
          case 2:
-            log_menu.tambah(main)
-
-            while True:
-               hasil = mn.create_document(dt.daftar_dokumen)
-
-               if hasil == 0:
-                  back = log_menu.hapus()
-                  back()
-                  return
-               
-               
+            dt.log_menu.tambah(main)
+            mn.lihat_similarity()
 
          case 3:
-            log_menu.tambah(main)
-
-            while True:
-               hasil = mn.delete_document()
-
-               if hasil == 0:
-                  back = log_menu.hapus()
-                  back()
-                  return
+            dt.log_menu.tambah(main)
+            mn.create_document()
 
          case 4:
-            log_menu.tambah(main)
+            dt.log_menu.tambah(main)
+            mn.delete_document()
 
-            while True:
-               hasil = mn.list_document()
-
-               if hasil == 0:
-                  back = log_menu.hapus()
-                  back()
-                  return
-
-               
+         case 5:
+            dt.log_menu.tambah(main)
+            mn.list_document()
 
          case 0:
-            return
+            print('\nTerima kasih telah menggunakan program ini!')
+            exit()
+
+         case _:
+            print('Pilihan tidak valid!')
+
 
 if __name__ == '__main__':
    main()

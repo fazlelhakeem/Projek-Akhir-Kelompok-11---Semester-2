@@ -1,3 +1,5 @@
+#File untuk mengimplementasikan OOP
+
 import os
 from . import Circular_Linked_List as cll
 from . import file_handler as fh
@@ -23,6 +25,11 @@ class DaftarDocument:
       
       return hasil
 
+   def search_dokumen(self, target):
+      hasil = self.data.search(target, self.length)
+
+      return hasil
+      
    @staticmethod
    def init_daftar_document():
       list_nama = fh.read_file('daftar dokumen.txt').splitlines()
