@@ -11,6 +11,8 @@ def create_document():
    while True:
       print('\n(ketik "0" untuk kembali)')
 
+      display_daftar()
+
       while True:
          nama_file = input('\nMasukkan nama file yang ingin anda buat: ')
 
@@ -55,6 +57,8 @@ def create_document():
 def delete_document():
    while True:
       print('\n(ketik "0" untuk kembali)')
+
+      display_daftar()
 
       while True:
          try:
@@ -291,7 +295,7 @@ def lihat_similarity():
    Menampilkan riwayat semua similarity yang sudah pernah dihitung
    dalam sesi ini menggunakan Graph.
    """
-   print('\n   Riwayat Similarity Dokumen (Graph)')
+   print('\n   Riwayat Similarity Dokumen ')
    print('=' * 57)
 
    edges = dt.similarity_graph.get_all_edges()
